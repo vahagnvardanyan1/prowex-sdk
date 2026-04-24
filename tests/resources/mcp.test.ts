@@ -11,15 +11,19 @@ describe("Mcp resource", () => {
 
   it("connects an MCP server", async () => {
     const result = await prowex.mcp.connect({
-      name: "test-server",
-      transport: "http",
-      url: "http://localhost:8080",
+      payload: {
+        name: "test-server",
+        transport: "http",
+        url: "http://localhost:8080",
+      },
     });
     expect(result.discoveredTools).toContain("tool1");
   });
 
   it("disconnects an MCP server", async () => {
-    await expect(prowex.mcp.disconnect("test-server")).resolves.toBeUndefined();
+    await expect(
+      prowex.mcp.disconnect({ serverName: "test-server" }),
+    ).resolves.toBeUndefined();
   });
 
   it("lists builtin MCP servers", async () => {
@@ -28,7 +32,7 @@ describe("Mcp resource", () => {
   });
 
   it("lists builtin server tools", async () => {
-    const result = await prowex.mcp.builtinTools("test-server");
+    const result = await prowex.mcp.builtinTools({ serverName: "test-server" });
     expect(result.server).toBe("test");
   });
 });

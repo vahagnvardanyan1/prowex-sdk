@@ -148,7 +148,10 @@ export class HttpClient {
     throw lastError!;
   }
 
-  private buildURL(path: string, query?: Record<string, string | number | boolean | undefined>): string {
+  private buildURL(
+    path: string,
+    query?: Record<string, string | number | boolean | undefined>,
+  ): string {
     const url = new URL(path, this.baseURL);
     if (query) {
       for (const [key, value] of Object.entries(query)) {

@@ -1,4 +1,5 @@
 import { Prowex } from "@/client";
+
 export { Prowex };
 export default Prowex;
 

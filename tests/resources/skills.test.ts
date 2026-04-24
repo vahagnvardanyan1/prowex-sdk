@@ -11,7 +11,7 @@ describe("Skills resource", () => {
   });
 
   it("retrieves a skill", async () => {
-    const skill = await prowex.skills.retrieve("deep-research");
+    const skill = await prowex.skills.retrieve({ id: "deep-research" });
     expect(skill.name).toBe("Deep Research");
   });
 });

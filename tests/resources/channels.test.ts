@@ -11,12 +11,12 @@ describe("Channels resource", () => {
   });
 
   it("retrieves a channel", async () => {
-    const channel = await prowex.channels.retrieve("chan-1");
+    const channel = await prowex.channels.retrieve({ id: "chan-1" });
     expect(channel.id).toBe("chan-1");
   });
 
   it("deletes a channel", async () => {
-    await expect(prowex.channels.delete("chan-1")).resolves.toBeUndefined();
+    await expect(prowex.channels.delete({ id: "chan-1" })).resolves.toBeUndefined();
   });
 
   it("generates a telegram link", async () => {

@@ -12,8 +12,7 @@ describe("Analytics resource", () => {
 
   it("gets dashboard with date range", async () => {
     const data = await prowex.analytics.dashboard({
-      from: "2025-01-01",
-      to: "2025-12-31",
+      range: { from: "2025-01-01", to: "2025-12-31" },
     });
     expect(data).toBeDefined();
   });

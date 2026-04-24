@@ -1,4 +1,10 @@
-import type { ProviderName, AgentStatus, AgentMode, AgentType, EmbeddingProviderName } from "@/types/enums";
+import type {
+  ProviderName,
+  AgentStatus,
+  AgentMode,
+  AgentType,
+  EmbeddingProviderName,
+} from "@/types/enums";
 
 export interface AgentConfig {
   temperature?: number;

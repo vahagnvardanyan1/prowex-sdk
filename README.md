@@ -8,7 +8,7 @@ Official Node.js & browser SDK for the [Prowex](https://prowex.ai) platform.
 npm install @prowex/sdk
 ```
 
-## Quick Start 
+## Quick Start
 
 ```ts
 import Prowex from "@prowex/sdk";
@@ -23,20 +23,25 @@ const agents = await prowex.agents.list();
 
 // Create an agent
 const agent = await prowex.agents.create({
-  name: "My Agent",
-  model: "claude-sonnet-4-6",
+  payload: { name: "My Agent", model: "claude-sonnet-4-6" },
 });
 
 // Send a message
-const conv = await prowex.conversations.create(agent.id);
-const reply = await prowex.conversations.sendMessage(conv.id, "Hello!");
+const conv = await prowex.conversations.create({ agentId: agent.id });
+const reply = await prowex.conversations.sendMessage({
+  conversationId: conv.id,
+  message: "Hello!",
+});
 console.log(reply.response);
 ```
 
 ## Streaming
 
 ```ts
-const stream = await prowex.conversations.stream(conv.id, "Tell me a joke");
+const stream = await prowex.conversations.stream({
+  conversationId: conv.id,
+  message: "Tell me a joke",
+});
 
 for await (const event of stream) {
   console.log(event.type);
@@ -46,7 +51,10 @@ for await (const event of stream) {
 console.log(await stream.finalText());
 
 // Or use event handlers
-const stream2 = await prowex.conversations.stream(conv.id, "Hello");
+const stream2 = await prowex.conversations.stream({
+  conversationId: conv.id,
+  message: "Hello",
+});
 stream2.on("agent.message", (event) => {
   console.log(event.content);
 });
@@ -86,7 +94,7 @@ const prowex = new Prowex({
 import { NotFoundError, AuthenticationError, RateLimitError } from "@prowex/sdk";
 
 try {
-  await prowex.agents.retrieve("non-existent");
+  await prowex.agents.retrieve({ id: "non-existent" });
 } catch (error) {
   if (error instanceof NotFoundError) {
     console.log("Agent not found");

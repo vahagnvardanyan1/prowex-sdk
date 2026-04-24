@@ -10,16 +10,20 @@ describe("Knowledge resource", () => {
   });
 
   it("creates a knowledge base", async () => {
-    const kb = await prowex.knowledge.create("Test KB");
+    const kb = await prowex.knowledge.create({ name: "Test KB" });
     expect(kb.id).toBe("kb-1");
   });
 
   it("adds a document", async () => {
-    const result = await prowex.knowledge.addDocument("kb-1", "text content", "file.txt");
+    const result = await prowex.knowledge.addDocument({
+      kbId: "kb-1",
+      text: "text content",
+      filename: "file.txt",
+    });
     expect(result.documentId).toBe("doc-1");
   });
 
   it("deletes a knowledge base", async () => {
-    await expect(prowex.knowledge.delete("kb-1")).resolves.toBeUndefined();
+    await expect(prowex.knowledge.delete({ id: "kb-1" })).resolves.toBeUndefined();
   });
 });

@@ -40,8 +40,7 @@ export const EventType = {
   CustomToolUse: "agent.custom_tool_use" satisfies CustomToolUseEvent["type"],
   MCPToolUse: "agent.mcp_tool_use" satisfies MCPToolUseEvent["type"],
   MCPToolResult: "agent.mcp_tool_result" satisfies MCPToolResultEvent["type"],
-  ContextCompacted:
-    "agent.thread_context_compacted" satisfies ContextCompactedEvent["type"],
+  ContextCompacted: "agent.thread_context_compacted" satisfies ContextCompactedEvent["type"],
   SessionError: "session.error" satisfies SessionErrorEvent["type"],
 
   SessionStatusIdle: "session.status_idle" as const,
@@ -60,10 +59,7 @@ export const EventType = {
 
 // Session lifecycle event types
 
-export type SessionStopReasonType =
-  | "end_turn"
-  | "requires_action"
-  | "retries_exhausted";
+export type SessionStopReasonType = "end_turn" | "requires_action" | "retries_exhausted";
 
 export interface SessionStatusIdleEvent {
   type: "session.status_idle";
@@ -168,10 +164,7 @@ export type StreamEvent =
   | SpanModelRequestEndEvent
   | BackendEvent;
 
-export type ToolUseEvent =
-  | AgentToolUseEvent
-  | CustomToolUseEvent
-  | MCPToolUseEvent;
+export type ToolUseEvent = AgentToolUseEvent | CustomToolUseEvent | MCPToolUseEvent;
 
 export type SessionStatus =
   | "running"
