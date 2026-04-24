@@ -1,6 +1,6 @@
 {
   "name": "@prowex/sdk",
-  "version": "0.0.0-development",
+  "version": "1.0.0",
   "description": "Official Prowex SDK for Node.js and browsers",
   "license": "MIT",
   "type": "module",
