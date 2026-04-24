@@ -22,9 +22,12 @@ jobs:
           cache: npm
           registry-url: https://registry.npmjs.org
       - run: npm ci
+        env:
+          HUSKY: 0
       - run: npm run build
       - run: npx semantic-release
         env:
+          HUSKY: 0
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
