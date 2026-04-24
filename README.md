@@ -8,7 +8,7 @@ Official Node.js & browser SDK for the [Prowex](https://prowex.ai) platform.
 npm install @prowex/sdk
 ```
 
-## Quick Start
+## Quick Start 
 
 ```ts
 import Prowex from "@prowex/sdk";
