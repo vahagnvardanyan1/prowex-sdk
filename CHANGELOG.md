@@ -1,3 +1,11 @@
+# [1.2.0](https://github.com/vahagnvardanyan1/prowex-sdk/compare/v1.1.0...v1.2.0) (2026-04-24)
+
+
+### Features
+
+* add HUSKY environment variable to CI and release workflows ([3f5c161](https://github.com/vahagnvardanyan1/prowex-sdk/commit/3f5c1610d3920f6b31ec135e04ed8be5d5ae96b6))
+* enhance API resource methods with destructured parameters ([f7483c0](https://github.com/vahagnvardanyan1/prowex-sdk/commit/f7483c0452afa135977d65a538854ef1fbde5f7b))
+
 # [1.1.0](https://github.com/vahagnvardanyan1/prowex-sdk/compare/v1.0.0...v1.1.0) (2026-04-24)
 
 
