@@ -67,14 +67,11 @@ for await (const _ of stream2) {
 
 | Resource | Methods |
 |----------|---------|
-| `prowex.agents` | `list` `retrieve` `create` `update` `delete` `clone` `generate` `generatePrompt` `availableTools` `toolDefinitions` `uploadResource` |
+| `prowex.agents` | `list` `retrieve` `create` `update` `delete` `clone` `generatePrompt` `toolDefinitions` `uploadResource` |
 | `prowex.conversations` | `create` `list` `messages` `usage` `sendMessage` `stream` `resumeStream` `uploadAttachment` `delete` |
 | `prowex.tools` | `list` `retrieve` `create` `update` `delete` + `secrets.set` `secrets.list` `secrets.delete` |
-| `prowex.schedules` | `list` `retrieve` `create` `update` `delete` `trigger` `runs` |
-| `prowex.channels` | `list` `retrieve` `delete` + `telegram.generateLink` |
 | `prowex.knowledge` | `list` `create` `addDocument` `delete` |
 | `prowex.analytics` | `dashboard` `daily` `byAgent` `byModel` |
-| `prowex.mcp` | `list` `connect` `disconnect` `listBuiltin` `builtinTools` `sendMessage` |
 | `prowex.skills` | `list` `retrieve` |
 
 ## Configuration
