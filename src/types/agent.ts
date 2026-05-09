@@ -126,20 +126,3 @@ export interface CreateBetaAgentPayload {
   metadata?: Record<string, unknown>;
   suggestions?: AgentSuggestion[] | null;
 }
-
-export interface GeneratedConfig {
-  name: string;
-  description: string;
-  provider?: string;
-  model: string;
-  systemPrompt: string;
-  tools: string[];
-  config: { temperature: number; maxTokens: number };
-  maxIterations: number;
-}
-
-export interface SuggestedTool {
-  name: string;
-  description: string;
-  reason: string;
-}

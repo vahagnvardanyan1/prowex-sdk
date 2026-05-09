@@ -5,8 +5,6 @@ import type {
   ToolDefinition,
   UpdateAgentPayload,
   CreateBetaAgentPayload,
-  GeneratedConfig,
-  SuggestedTool,
 } from "@/types/agent";
 
 export class Agents extends BaseResource {
@@ -48,16 +46,6 @@ export class Agents extends BaseResource {
     return this.client.post<Agent>(`/agents/${id}/clone`, undefined, options);
   }
 
-  async generate({
-    description,
-    options,
-  }: {
-    description: string;
-    options?: RequestOptions;
-  }): Promise<{ agentConfig: GeneratedConfig; suggestedTools: SuggestedTool[] }> {
-    return this.client.post("/agents/generate", { description }, options);
-  }
-
   async generatePrompt({
     name,
     description,
@@ -70,10 +58,6 @@ export class Agents extends BaseResource {
     options?: RequestOptions;
   }): Promise<{ systemPrompt: string }> {
     return this.client.post("/agents/generate-prompt", { name, description, tools }, options);
-  }
-
-  async availableTools({ options }: { options?: RequestOptions } = {}): Promise<string[]> {
-    return this.client.get<string[]>("/agents/meta/tools", options);
   }
 
   async toolDefinitions({ options }: { options?: RequestOptions } = {}): Promise<ToolDefinition[]> {

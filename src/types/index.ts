@@ -3,8 +3,5 @@ export * from "@/types/agent";
 export * from "@/types/chat";
 export * from "@/types/conversation";
 export * from "@/types/stream";
-export * from "@/types/channel";
-export * from "@/types/schedule";
 export * from "@/types/analytics";
-export * from "@/types/mcp";
 export * from "@/types/secret";
