@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/vahagnvardanyan1/prowex-sdk/compare/v1.2.0...v1.3.0) (2026-05-09)
+
+
+### Features
+
+* s ([9527e52](https://github.com/vahagnvardanyan1/prowex-sdk/commit/9527e52a71d92a875b99ec2234d5a5e64d27c68c))
+
 # [1.2.0](https://github.com/vahagnvardanyan1/prowex-sdk/compare/v1.1.0...v1.2.0) (2026-04-24)
 
 
